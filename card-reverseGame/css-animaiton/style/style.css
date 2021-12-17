@@ -1,0 +1,109 @@
+.wrapper {
+  width: 700px;
+  margin: 80px auto 230px;
+  position: relative;
+}
+
+.header {
+  margin: 0 auto 72px;
+  width: 274px;
+  z-index: 10;
+}
+
+.line-left,
+.line-right {
+  position: absolute;
+  width: 180px;
+  height: 4px;
+  top: 30px;
+  margin: 0 auto;
+  background-color:#f2994a;
+}
+
+.line-left {
+  left: 0;
+}
+
+.line-right {
+  right: 0px;
+}
+
+.cardCol-1,
+.cardCol-2 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.cardCol-1 {
+  margin-bottom: 24px;
+}
+
+.container {
+  width: 125px;
+  height: 179px;
+  perspective: 800px;
+}
+
+.front,
+.back {
+  width: 125px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  transform: rotateY(180deg);
+  transition: all 1.2s;
+}
+
+.back {
+  width: 125px;
+  height: 179px;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+}
+
+.back .card {
+  width: 70px;
+}
+
+.front .card {
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.item {
+  backface-visibility: hidden;
+  transition: 1s;
+}
+
+.item.front {
+  position: absolute;
+  transform: rotateY(0deg);
+}
+.container:hover .front {
+  transform: rotateY(180deg);
+}
+
+.container .item.back {
+  transform: rotateY(-180deg);
+}
+
+.container:hover .back{
+  transform: rotateY(0deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
