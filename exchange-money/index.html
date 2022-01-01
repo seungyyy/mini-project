@@ -13,29 +13,30 @@
 <body>
   <section class="section">
     <article class="box top">
-      <button class="drop-btn">USD</button>
-      <div class="dropdown-cnt">
-        <a href="#" class="dropdown">💸USD</a>
-        <a href="#" class="dropdown">💸KRW</a>
-        <a href="#" class="dropdown">💸JP</a>
-        <a href="#" class="dropdown">💸VND</a>
+      <button class="drop-btn" id="from-btn">USD</button>
+      <div class="dropdown-cnt" id="from-currency-list">
+        <a href="#" class="dropdown">USD</a>
+        <a href="#" class="dropdown">KRW</a>
+        <a href="#" class="dropdown">JP</a>
+        <a href="#" class="dropdown">VND</a>
       </div>
       <div class="input-area">
-        <input type="number" id="from-input">
-        <span>금액</span>
+        <input type="text" id="from-input" onkeyup="convert('from')"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '0');"
+        placeholder="금액을 입력하세요" />
+        <div id="fromNumToKorea" class="korean-num">달러</div>
       </div>
     </article>
     <article class="box bottom">
-      <button class="drop-btn">USD</button>
-      <div class="dropdown-cnt">
-        <a href="#" class="dropdown">💸USD</a>
-        <a href="#" class="dropdown">💸KRW</a>
-        <a href="#" class="dropdown">💸JP</a>
-        <a href="#" class="dropdown">💸VND</a>
+      <button class="drop-btn" id="to-btn">USD</button>
+      <div class="dropdown-cnt" id="to-currency-list">
+        <a href="#" class="dropdown">USD</a>
+        <a href="#" class="dropdown">KRW</a>
+        <a href="#" class="dropdown">JP</a>
+        <a href="#" class="dropdown">VND</a>
       </div>
       <div class="input-area">
-        <input type="number" id="from-input">
-        <span>금액</span>
+        <input type="number" id="to-input" onkeyup="convert('to')"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '0');"  placeholder="금액을 입력하세요">
+        <div id="fromNumToKorea" class="korean-num">달러</div>
       </div>
     </article>
   </section>
